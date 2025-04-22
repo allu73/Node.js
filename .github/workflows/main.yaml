@@ -1,7 +1,9 @@
-name: ci
+name: node app
 
 on:
   push:
+      branches:
+        - main
 
 jobs:
   docker:
