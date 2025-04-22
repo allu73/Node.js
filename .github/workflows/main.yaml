@@ -26,4 +26,4 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: allu29/node-server:latest
+          tags: allu29/allu29/node.js:latest
