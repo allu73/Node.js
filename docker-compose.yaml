@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app:
+    image: allu29/node.js:latest
+    ports:
+      - "3000:3000"
+    container_name: node-js-app
+    restart: unless-stopped
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_SCHEDULE=0 0 * * * *
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+    restart: unless-stopped
